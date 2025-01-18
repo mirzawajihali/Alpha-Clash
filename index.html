@@ -19,9 +19,11 @@
     <section id="home-screen" class="home  text-white flex flex-col justify-center  min-h-screen items-center ">
         <div class="flex flex-col items-center   gap-8 ">
             <h1 class="lg:text-9xl text-5xl font-bold uppercase ">ALpha Clash pro</h1>
-        <p class="text-xl">Unleash your keyboard kun g fu : Press enter to play</p>
+        <p class="text-xl">A Game Developed by <a class="font-bold" href="">Mirza Wajih Ali</a></p>
         <button onclick="play() " class="btn bg-white text-black">Play Now!</button>
         </div>
+
+
     </section>
 
     <section class=" hidden" id="play-ground">
@@ -88,14 +90,14 @@
                 <button class="btn text-white bg-purple-400 rounded-full px-6">
                     Life
                  <img src="images/heart.svg" alt="">
-                   <span>1</span>
+                   <span id="life">5</span>
                   </button>
 
 
                 <button class="btn text-whitec text-white bg-purple-700  rounded-full px-6">
                     Score
                  <img src="images/dollar.svg" alt="">
-                   <span>1</span>
+                   <span id="current-score">0</span>
                   </button>
 
                   </button>
@@ -106,15 +108,19 @@
 
 
     <!-- result show  -->
-    <section  class="score hidden flex justify-center items-center min-h-screen">
+    <section id="score-section" class=" hidden flex justify-center items-center min-h-screen">
 
         <div class="space-y-5 flex justify-center flex-col bg-[#FFFFFF33] p-6 rounded-lg">
+            <h1 class="text-6xl font-extrabold text-white">
+               Game Over!
+                
+            </h1>
             <h1 class="text-8xl font-extrabold text-white">
                 Score 
-                <span>14</span>
+                <span class="result">14</span>
             </h1>
 
-            <button class="btn">Play Now!</button>
+            <button onclick="play()" class="btn">Play Again!</button>
 
             <p class=" text-white text-center">Practice makes you a pro!</p>
         </div>

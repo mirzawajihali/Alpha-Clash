@@ -49,7 +49,7 @@ function handleKeyboardKeyUpEvent(event){
 
         lifeElement.innerText =newLife;
 
-        if(newLife === 0){
+        if(newLife === 0 || playerPressed === "Escape"){
             gameOver();
         }
 
@@ -80,14 +80,53 @@ function continueGame(){
  
 
 function play(){
+
+    // hide everything show only the playground 
     hideByID("home-screen");
     hideByID("score-section");
     showByID("play-ground");
     continueGame();
+
+
+
+    // set the life 5 and score zero everytime you start playing 
+
+    const currentScoreElement = document.getElementById("current-score");
+
+    currentScoreElement.innerText = 0;
+
+
+    const lifeElement = document.getElementById('life');
+
+   
+
+    lifeElement.innerText =5;
+
 }
 
 function gameOver(){
     hideByID("play-ground");
     showByID("score-section");
+
+    // set the final score 
+
+    const lastScore = document.getElementById('current-score');
+
+    const result = lastScore.innerText;
+
+    const resultElement = document.getElementById("result");
+
+    resultElement.innerText = result;
+
+
+
+
+    // remove the background key color of the last key before game over 
+
+    const currentAlphabet = document.getElementById("current-alphabet");
+
+    const alphabet = currentAlphabet.innerText;
+
+    removeBackgroundColorById(alphabet);
     
 }
